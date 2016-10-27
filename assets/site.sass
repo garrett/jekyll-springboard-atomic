@@ -28,25 +28,20 @@ $grey-color-dark: darken($grey-color, 25%)
 $content-width: 80em
 
 // Import partials from the `minima` theme.
-@import minima
+@import "minima"
 
-// Events and upcoming support. 
-// Comment out or remove if you don't use calendar or upcoming features.
-@import lib/events
-@import lib/scrollbar-on
+// Import grid (see http://gridlex.devlint.fr/ for docs)
+@import "vendor/gridlex"
 
-@import lib/pagination
-@import lib/blog
-//@import lib/navbar
+//@import "lib/nav"
+@import "lib/pagination"
+@import "lib/blog"
+//@import "lib/stickyfooter"
+//@import "lib/scrollbar-on"
+//@import "lib/events"
+//@import "lib/stickyheader"
 
-// Minima also includes a mixin for defining media queries.
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+///////////////////////////////////////////////////////////////////////
 
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700|Pathway+Gothic+One'
 
@@ -105,6 +100,7 @@ body
 
 .page-content
   @extend .col
+  padding-top: 2rem
 
   @media screen and (min-width: $on-laptop)
     max-width: calc(100% - #{$sidebar-width})
@@ -119,8 +115,7 @@ h1, h2, h3, h4, h5, h6, nav a, .btn
 
 .intro
   padding: 3 * $spacing-unit
-  margin: -$spacing-unit
-  margin-bottom: $spacing-unit
+  margin: -2rem #{$spacing-unit * -1.5} $spacing-unit
   font-weight: 300
   text-shadow: 0 0 0.1px rgba(255, 255, 255, 0.1)
 
